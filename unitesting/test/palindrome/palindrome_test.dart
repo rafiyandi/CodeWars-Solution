@@ -32,6 +32,29 @@ class Palindrome {
     }
     return true;
   }
+
+//NOTE : function bantuan
+  bool isPalindromeHelper(String value, int i) {
+    if (i < value.length / 2) {
+      String nilaiAwal = value[i];
+      String nilaiAkhir = value[value.length - i - 1];
+      print("ini nilai akhir fii" + nilaiAwal);
+      print("ini nilai akhir fii" + nilaiAkhir);
+
+      if (nilaiAwal != nilaiAkhir) {
+        return false;
+      } else {
+        return isPalindromeHelper(value, i + 1);
+      }
+    } else {
+      return true;
+    }
+  }
+
+//NOTE :No Loping
+  bool isPalindromeRecursive(String value) {
+    return isPalindromeHelper(value, 0);
+  }
 }
 
 void main() {
@@ -52,6 +75,11 @@ void main() {
     test("Palindrom no Variable and optimize", () {
       expect(p.isPalindromeOptimize("kodok"), equals(isTrue));
       expect(p.isPalindromeOptimize("rafi"), equals(isFalse));
+    });
+
+    test("Palindrom Recursive", () {
+      expect(p.isPalindromeRecursive("kodok"), equals(true));
+      expect(p.isPalindromeRecursive("ayu"), equals(false));
     });
   });
 }
