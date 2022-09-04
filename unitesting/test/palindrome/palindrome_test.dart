@@ -38,8 +38,8 @@ class Palindrome {
     if (i < value.length / 2) {
       String nilaiAwal = value[i];
       String nilaiAkhir = value[value.length - i - 1];
-      print("ini nilai akhir fii" + nilaiAwal);
-      print("ini nilai akhir fii" + nilaiAkhir);
+      print("ini nilai awal fii :" + nilaiAwal);
+      print("ini nilai akhir fii :" + nilaiAkhir);
 
       if (nilaiAwal != nilaiAkhir) {
         return false;
